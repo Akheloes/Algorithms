@@ -1,3 +1,8 @@
+/*
+This is a JS translation of williamfiset code for this algorithm. 
+Check his work out on the following link : https://github.com/williamfiset/Algorithms/blob/master/com/williamfiset/algorithms/other/PowerSet.java
+*/
+
 function powerSetRecursive(at, set, used) {
 	var subSet = "";
 	if(at == set.length){
