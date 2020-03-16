@@ -16,4 +16,4 @@ function randomArrayGenerator(capSize) {
     return array;
 }
 
-// module.exports.randomArrayGenerator = randomArrayGenerator;
+module.exports.randomArrayGenerator = randomArrayGenerator;
