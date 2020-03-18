@@ -25,18 +25,22 @@ function jsy_intersection(firstArray, secondArray) {
     return firstArray.filter(f => secondArray.indexOf(f) !== -1).sort(); //@todo: eliminate duplicates
 }
 
-const randomArrayGenerator = require('./randomArrayGenerator').randomArrayGenerator;
+/**
+ * The following code is for testing purposes
+ */
 
-let first = randomArrayGenerator(100);
-let second = randomArrayGenerator(100);
+// const randomArrayGenerator = require('./randomArrayGenerator').randomArrayGenerator;
 
-console.time('jsy');
-let result = jsy_intersection(first, second);
-console.timeEnd('jsy');
+// let first = randomArrayGenerator(100);
+// let second = randomArrayGenerator(100);
 
-console.time('naive');
-let result_ = naive_intersection(first, second);
-console.timeEnd('naive');
+// console.time('jsy');
+// let result = jsy_intersection(first, second);
+// console.timeEnd('jsy');
 
-console.log(result);
-console.log(result_);
+// console.time('naive');
+// let result_ = naive_intersection(first, second);
+// console.timeEnd('naive');
+
+// console.log(result);
+// console.log(result_);

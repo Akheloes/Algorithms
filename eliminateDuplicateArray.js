@@ -16,13 +16,17 @@ function js_style_eliminateDuplicateArray(array) {
     return array.filter((item, pos) => { return array.indexOf(item) == pos });
 }
 
-let randomArrayGenerator = require('./randomArrayGenerator').randomArrayGenerator;
-let array = randomArrayGenerator(100).sort();
+/**
+ * The following code is for testing purposes
+ */
 
-console.time('naive');
-let naive = naive_eliminateDuplicateArray(array);
-console.timeEnd('naive');
+// let randomArrayGenerator = require('./randomArrayGenerator').randomArrayGenerator;
+// let array = randomArrayGenerator(100).sort();
 
-console.time('js_style');
-let js_style = js_style_eliminateDuplicateArray(array);
-console.timeEnd('js_style');
+// console.time('naive');
+// let naive = naive_eliminateDuplicateArray(array);
+// console.timeEnd('naive');
+
+// console.time('js_style');
+// let js_style = js_style_eliminateDuplicateArray(array);
+// console.timeEnd('js_style');
