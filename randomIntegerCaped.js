@@ -4,7 +4,7 @@
  */
 function randomIntegerCaped(Cap) {
     let seed = Math.random();
-    let scaling = seed * (Cap + 1);
+    let scaling = seed * (Cap + 1); //the +1 will ensure random inclusion of the Cap itself.
     return Math.floor(scaling);
 }
 
