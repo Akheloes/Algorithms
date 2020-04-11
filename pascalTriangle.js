@@ -44,7 +44,7 @@ function binomial(n, k) {
             binomials.push(array);
             size++;
         }
-        return binomials[n];
+        return binomials[n][k];
     }
 }
 
