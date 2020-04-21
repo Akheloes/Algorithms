@@ -19,9 +19,8 @@ function permute(input) {
 /**
  * With swapping technique, is O(n!)
  */
-function permutations(array) {
+function permutations(input) {
   var perms = [];
-  var input = array.slice();
   return (function recurrence(input, n = input.length){
     if(n == 1) {
       perms.push(input.slice());
@@ -44,6 +43,6 @@ function swap(input, firstIndex, secondIndex) {
  * Examples of use
  */
 
-let array = [1, 2, 3, 4];
+let array = [1, 2, 3];
 let result = permutations(array);
 console.log(result);
