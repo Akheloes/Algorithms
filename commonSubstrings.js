@@ -9,13 +9,13 @@ function commonSubstrings(firstString, secondString) {
             if (firstString[i] === secondString[k]) {
                 let unbroken = true;
                 let substring = '';
-                let ii = i;
-                let kk = k;
-                while(unbroken && ii < firstString.length && kk < secondString.length) {
-                    if(firstString[ii] === secondString[kk]) {
-                        substring += firstString[ii];
-                        ii++;
-                        kk++;
+                let _i_ = i;
+                let _k_ = k;
+                while(unbroken && _i_ < firstString.length && _k_ < secondString.length) {
+                    if(firstString[_i_] === secondString[_k_]) {
+                        substring += firstString[_i_];
+                        _i_++;
+                        _k_++;
                     } else {
                         unbroken = false;
                     }
@@ -23,10 +23,13 @@ function commonSubstrings(firstString, secondString) {
                 if(substring.length > 1) {
                     substringsArray.push(substring);
                 }
+                // i = _i_;
+                // k = _k_;
             }
         }
     }
-    return substringsArray;
+    return substringsArray
+    .filter((item, index, array) => {return array.indexOf(item) === index})
 }
 
 
@@ -34,7 +37,7 @@ function commonSubstrings(firstString, secondString) {
 /**
  * Example of use
  */
-let firstString = 'ABABC---'; 
-let secondString = 'BABCA---';
+let firstString = 'aababbcccb'; 
+let secondString = 'ababbcb';
 let result = commonSubstrings(firstString, secondString);
 console.log(result);
