@@ -10,6 +10,7 @@ function intercontained(firstString, secondString) {
 /**
  * Takes an array and return it's intercontained-purified-version, 
  * that is, if two elements are intercontained, they the smallest is eliminated.
+ * Example: if input is ['ee', 'abcd', 'ab', 'abc', 'e', 'abcd', 'abcde'], output is ['ee', 'abcde']
  */
 function interContainelessArray(array) {
     let purified = [];
@@ -30,7 +31,7 @@ function interContainelessArray(array) {
 /**
  * Example of use
  */
-let array = ['ee', 'abcd', 'ab', 'abc', 'abcd', 'e', 'abcd', 'abcde'];
+let array = ['ee', 'abcd', 'ab', 'abc', 'e', 'abcd', 'abcde'];
 
 let result = interContainelessArray(array);
 console.log(result);
