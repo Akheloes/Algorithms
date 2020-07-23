@@ -18,10 +18,10 @@ if __name__ == "__main__":
     # print(X)
     # print('____________kids membership degrees____________')
     # print(childhoodDegree)
-    print('____________teenagers membership degrees____________')
-    print(teenagersDegree)
-    print('____________youth membership degrees____________')
-    print(youthDegree)
+    # print('____________teenagers membership degrees____________')
+    # print(teenagersDegree)
+    # print('____________youth membership degrees____________')
+    # print(youthDegree)
     # print('____________middle-aged membership degrees____________')
     # print(middleAgedDegree)
 
@@ -39,9 +39,21 @@ if __name__ == "__main__":
     # print(union)
 
     # https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.html#fuzzy-and
-    intersection = fuzz.fuzzy_and(X, teenagersDegree, X, youthDegree)[1]
-    print('_________________Intersection__________________')
-    print(intersection)
+    # intersection = fuzz.fuzzy_and(X, teenagersDegree, X, youthDegree)[1]
+    # print('_________________Intersection__________________')
+    # print(intersection)
+
+    #______________________________________________
+    from matplotlib import pyplot as plt 
+
+    plt.figure()
+
+    plt.subplot(1, 1, 1)
+    plt.plot(X, youthDegree)
+    plt.title('Youth')
+    plt.grid(True)
+    plt.show()
+
 
 
 
