@@ -9,10 +9,10 @@ if __name__ == "__main__":
     youthMembershipTriangularFunction = [15, 25, 30] #Membership function for youth
     middleAgedMembershipTriangularFunction = [35, 40, 45] #Membership function for middle-aged
 
-    childhoodDegree = fuzz.membership.trimf(X, kidsMembershipTriangularFunction) #The degree of belonging of X-members to child's category
+    childhoodDegree = fuzz.membership.trimf(X, kidsMembershipTriangularFunction) #The degree of belonging of X's-members to child's category
     teenagersDegree = fuzz.membership.trimf(X, teenagersMembershipTrangularFunction)
-    youthDegree = fuzz.membership.trimf(X, youthMembershipTriangularFunction) #The degree of belonging of X-members to youth's category
-    middleAgedDegree = fuzz.membership.trimf(X, middleAgedMembershipTriangularFunction) #The degree of belonging of X-members to middle-aged's category
+    youthDegree = fuzz.membership.trimf(X, youthMembershipTriangularFunction) #The degree of belonging of X's-members to youth's category
+    middleAgedDegree = fuzz.membership.trimf(X, middleAgedMembershipTriangularFunction) #The degree of belonging of X's-members to middle-aged's category
 
     # print('____________Array of ages____________')
     # print(X)
