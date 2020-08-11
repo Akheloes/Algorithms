@@ -2,7 +2,10 @@ import numpy as np
 import skfuzzy as fuzz
 
 if __name__ == "__main__":
-    X = np.linspace(start=0, stop=75, num=75, endpoint=True, retstep=False)
+    X = np.linspace(start=0, stop=75, num=75, endpoint=True, retstep=False) # Generates members from 0 to 75 years old, separated by an equal distance.
+    # print('____________members____________')
+    # print(X)
+
     # Creating membership functions
     kidsMembershipTriangularFunction = [0, 5, 10] #Membership function for child-age (childhood)
     teenagersMembershipTrangularFunction = [10, 15, 20] #Membership function for teenagers
@@ -11,7 +14,7 @@ if __name__ == "__main__":
 
     childhoodDegree = fuzz.membership.trimf(X, kidsMembershipTriangularFunction) #The degree of belonging of X's-members to child's category
     teenagersDegree = fuzz.membership.trimf(X, teenagersMembershipTrangularFunction)
-    youthDegree = fuzz.membership.trimf(X, youthMembershipTriangularFunction) #The degree of belonging of X's-members to youth's category
+    youthDegree = fuzz.membership.trimf(X, youthMembershipTriangularFunction) #The degree of belonging of X's-members to youth's category, filters out members of this class (those who are not in are attributed zero membership)
     middleAgedDegree = fuzz.membership.trimf(X, middleAgedMembershipTriangularFunction) #The degree of belonging of X's-members to middle-aged's category
 
     # print('____________Array of ages____________')
