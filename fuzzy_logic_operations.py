@@ -37,9 +37,9 @@ if __name__ == "__main__":
     # print(zero)
 
     # https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.html#fuzzy-not
-    union = fuzz.fuzzy_or(X, youthDegree, X, middleAgedDegree)[1]
-    print('_________________Union__________________')
-    print(union)
+    # union = fuzz.fuzzy_or(X, youthDegree, X, middleAgedDegree)[1]
+    # print('_________________Union__________________')
+    # print(union)
 
     # https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.html#fuzzy-and
     # intersection = fuzz.fuzzy_and(X, teenagersDegree, X, youthDegree)[1]
@@ -66,13 +66,24 @@ if __name__ == "__main__":
     # plt.show()
 
     ## Plotting the complement of the union of two membership classes
-    complement = fuzz.fuzzy_not(union)
+    # complement = fuzz.fuzzy_not(union)
 
-    plt.figure()
-    plt.subplot(1, 1, 1)
-    plt.plot(X, complement)
-    plt.title('Complement of union')
-    plt.grid(True)
-    plt.show()
+    # plt.figure()
+    # plt.subplot(1, 1, 1)
+    # plt.plot(X, complement)
+    # plt.title('Complement of union')
+    # plt.grid(True)
+    # plt.show()
+
+    ## Plotting the difference of the union of two membership classes
+    # difference = fuzz.fuzzy_and(X, youthDegree, X, middleAgedDegree)[1]
+    # # print(difference)
+
+    # plt.figure()
+    # plt.subplot(1, 1, 1)
+    # plt.plot(X, difference)
+    # plt.title('Difference')
+    # plt.grid(True)
+    # plt.show()
 
 
