@@ -37,9 +37,9 @@ if __name__ == "__main__":
     # print(zero)
 
     # https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.html#fuzzy-not
-    # union = fuzz.fuzzy_or(X, youthDegree, X, middleAgedDegree)[1]
-    # print('_________________Union__________________')
-    # print(union)
+    union = fuzz.fuzzy_or(X, youthDegree, X, middleAgedDegree)[1]
+    print('_________________Union__________________')
+    print(union)
 
     # https://pythonhosted.org/scikit-fuzzy/api/skfuzzy.html#fuzzy-and
     # intersection = fuzz.fuzzy_and(X, teenagersDegree, X, youthDegree)[1]
@@ -49,15 +49,20 @@ if __name__ == "__main__":
     #______________________________________________
     from matplotlib import pyplot as plt 
 
-    plt.figure()
+    ## Ploting the youth degree members
+    # plt.figure()
+    # plt.subplot(1, 1, 1)
+    # plt.plot(X, youthDegree)
+    # plt.title('Youth')
+    # plt.grid(True)
+    # plt.show()
 
+    ## Ploting the union of two membership classes
+    plt.figure()
     plt.subplot(1, 1, 1)
-    plt.plot(X, youthDegree)
-    plt.title('Youth')
+    plt.plot(X, union)
+    plt.title('Union')
     plt.grid(True)
     plt.show()
-
-
-
 
 
