@@ -49,7 +49,7 @@ if __name__ == "__main__":
     #______________________________________________
     from matplotlib import pyplot as plt 
 
-    ## Ploting the youth degree members
+    ## Plotting the youth degree members
     # plt.figure()
     # plt.subplot(1, 1, 1)
     # plt.plot(X, youthDegree)
@@ -57,11 +57,21 @@ if __name__ == "__main__":
     # plt.grid(True)
     # plt.show()
 
-    ## Ploting the union of two membership classes
+    ## Plotting the union of two membership classes
+    # plt.figure()
+    # plt.subplot(1, 1, 1)
+    # plt.plot(X, union)
+    # plt.title('Union')
+    # plt.grid(True)
+    # plt.show()
+
+    ## Plotting the complement of the union of two membership classes
+    complement = fuzz.fuzzy_not(union)
+
     plt.figure()
     plt.subplot(1, 1, 1)
-    plt.plot(X, union)
-    plt.title('Union')
+    plt.plot(X, complement)
+    plt.title('Complement of union')
     plt.grid(True)
     plt.show()
 
