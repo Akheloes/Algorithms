@@ -22,14 +22,33 @@ def isSafe(board, i, j):
             safe = False
     
     # There exists an integer k for which board[l +- k][j +- k] = 1 ;
+    _i = i - 1
+    _j = j - 1
+    _size = size - 1 # ERASE
     for k in range(size):
-        if (i + k - 1 < size) and (j + k - 1 < size) and (i - k - 1 < size) and (j - k - 1 < size): # this is not exact
-            if board[i + k - 1][j + k - 1] or board[i - k - 1][j + k - 1] or board[i + k - 1][j - k - 1] or board[i - k - 1][j - k - 1]:
+        # for down-right diagonal cells
+        if (_i + k < size) and (_j + k < size):
+            if board[_i + k][_j + k] == 1:
                 safe = False
-    
+
+        # for up-right diagonal cells
+        if (_i - k >= 0) and (_j + k < size):
+            if board[_i - k][_j + k] == 1:
+                safe = False
+
+        # for up-left diagonal cells
+        if (_i - k >= 0) and (_j - k >= 0):
+            if board[_i - k][_j - k] == 1:
+                safe = False
+
+        #for up-right diagonal cells
+        if (_i + k < size) and (_j - k >= 0):
+            if board[_i + k][_j - k] == 1:
+                safe = False
+
     return safe
 
 # Example
-board = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]]
 attacked = isSafe(board, 3, 3)
 print('isSafe ?', attacked)
