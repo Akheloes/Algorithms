@@ -48,7 +48,40 @@ def isSafe(board, i, j):
 
     return safe
 
-# Example
-board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]]
-attacked = isSafe(board, 3, 3)
-print('isSafe ?', attacked)
+def examplePrinter(board, x, y):
+    attacked = isSafe(board, x, y)
+    print('isSafe ?', attacked)
+
+
+## Example, based on a 
+# case of a queen attacking from the upper-left diagonal
+board_up_left_unsafe = [[0, 1, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+board_up_left_safe = [[1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+# examplePrinter(board_up_left_unsafe, 3, 4)
+# examplePrinter(board_up_left_safe, 3, 4)
+
+# case of a queen attacking from the upper-right diagonal
+board_up_right_unsafe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+board_up_right_safe = [[0, 0, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+# examplePrinter(board_up_left_unsafe, 3, 4)
+# examplePrinter(board_up_left_safe, 3, 4)
+
+# case of a queen attacking from the lower-left diagonal
+board_low_left_unsafe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 1, 0, 0, 0]]
+board_low_left_safe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 0]]
+# examplePrinter(board_low_left_unsafe, 3, 4)
+# examplePrinter(board_low_left_safe, 3, 4)
+
+# case of a queen attacking from the lower-right diagonal
+board_low_right_unsafe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 1], [0, 0, 0, 0, 0]]
+board_low_right_safe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 0, 0, 0]]
+# examplePrinter(board_low_right_unsafe, 3, 4)
+# examplePrinter(board_low_right_safe, 3, 4)
+
+# case of same column
+board_column_unsafe = [[0, 0, 0, 1, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+# examplePrinter(board_column_unsafe, 3, 4)
+
+# case of same row
+board_row_unsafe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+# examplePrinter(board_row_unsafe, 3, 4)
