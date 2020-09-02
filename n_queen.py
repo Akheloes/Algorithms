@@ -9,6 +9,7 @@ If any of these conditions are verified, then the cell (i, j) is not safe.
 @params: board is a 2D matrix representing the chess board, cells with
 """
 def isSafe(board, i, j):
+    if (len(board) < 3): return False
     safe: bool = True
     size = len(board)
     # There exists an integer c for which board[i][c] = 1
@@ -85,3 +86,7 @@ board_column_unsafe = [[0, 0, 0, 1, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0,
 # case of same row
 board_row_unsafe = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 # examplePrinter(board_row_unsafe, 3, 4)
+
+# case of small board
+board_small = [[0, 0], [0, 0]]
+examplePrinter(board_small, 2, 2)
