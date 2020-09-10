@@ -22,6 +22,8 @@ class Segment:
         return '[ ' + self.first_end.__str__() + ' , ' + self.second_end.__str__() + ' ]' 
 
 class Network:
+    nodes = []
+
     def __init__(self, segments):
         self.segments = segments
 
@@ -30,7 +32,19 @@ class Network:
         for segment in self.segments:
             network += segment.__str__() + ' '
         return network
+    
+    # Extract nodes from segments
+    def extract_nodes(self):
+        names = []
+        for segment in self.segments:
+            if segment.first_end.name not in names:
+                names.append(segment.first_end.name)
+            if segment.second_end.name not in names:
+                names.append(segment.second_end.name)
+        return names
 
 segments = [Segment('A','B'), Segment('A', 'C'), Segment('C', 'D')]
 network = Network(segments)
-print(str(network))
+names = network.extract_nodes()
+for name in names:
+    print(name)
