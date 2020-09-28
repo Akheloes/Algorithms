@@ -14,10 +14,11 @@ class Node:
 
 # A segment is recognizable by two nodes
 class Segment:
-    index: int
+
     def __init__(self, first_end, second_end):
         self.first_end = Node(first_end)
         self.second_end = Node(second_end)
+        self.index = self.first_end + self.second_end
 
     def __str__(self):
         return '[ ' + self.first_end.__str__() + ' , ' + self.second_end.__str__() + ' ]' 
@@ -55,9 +56,14 @@ class Network:
     # There need not be optimization at this stage, a.k.a: we are not trying to minimize the set of needed nodes.
     def monitoring_nodes(self):
         self.extract_nodes()
-        # TODO: return all the segments which contains a given node
+        # TODO: return all nodes which are at least in common with two segments
+        in_common_segments = []
+        # For a given node test
+        for node in self.nodes:
+            segments_of_node = []
             
-        
+
+            
 
 
 segments = [Segment('A','B'), Segment('A', 'C'), Segment('C', 'D')]
