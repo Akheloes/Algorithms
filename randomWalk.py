@@ -14,7 +14,7 @@ def randomWalk(n):
         distance += toss()
     return distance
 
-def averaging(walks):
+def expectation(walks):
     return statistics.mean(walks)
 
 def produceWalks(n, n_):
@@ -23,8 +23,8 @@ def produceWalks(n, n_):
         l.append(randomWalk(n_))
     return l
 
-p = produceWalks(100, 30)
-a = averaging(p)
-print('walks: ', p)
+p = produceWalks(100, 3000)
+a = expectation(p)
+# print('walks: ', p)
 print('average: ', a)
     
