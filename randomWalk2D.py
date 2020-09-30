@@ -26,7 +26,16 @@ def random_walk_2D(n):
         y += dy
     return (x, y)
 
-# rw = random_walk(10)
-rw = random_walk(10)
-print('ten steps random walk: ', rw)
+# find which walk length ensures staying under a distance of 7
+number_of_walks = 10000
+
+for walk_length in range(1, 31):
+    no_transport = 0 # number of walks with a distances shorter than 7
+    for i in range(number_of_walks):
+        x, y = random_walk_2D(walk_length)
+        distance = abs(x) + abs(y)
+        if (distance < 4):
+            no_transport += 1
+    percentage = (float(no_transport) / number_of_walks) * 100
+    print("walk of length: ", walk_length, " | percentage of walks under 7 steps :", percentage)
         
